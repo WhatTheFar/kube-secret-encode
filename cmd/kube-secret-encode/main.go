@@ -11,19 +11,6 @@ import (
 )
 
 func main() {
-	// First element in os.Args is always the program name,
-	// So we need at least 2 arguments to have a file name argument.
-	//if len(os.Args) < 2 {
-	//	fmt.Println("Missing parameter, provide file name!")
-	//	return
-	//}
-	//data, err := ioutil.ReadFile(os.Args[1])
-	//if err != nil {
-	//	fmt.Println("Can't read file:", os.Args[1])
-	//	panic(err)
-	//}
-	// data is the file content, you can use it
-
 	data, err := ioutil.ReadAll(os.Stdin)
 	if err != nil {
 		log.Fatalln(err)
@@ -33,7 +20,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	println(encoded)
+	fmt.Println(encoded)
 }
 
 func stringDataToBase64(secretContent []byte) (string, error) {
